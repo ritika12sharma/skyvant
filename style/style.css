@@ -45,7 +45,7 @@ a {
 
 /* NAVBAR */
 .navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   padding: 16px 50px;
@@ -56,8 +56,11 @@ a {
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border-light);
   z-index: 10;
+  transition: transform 0.35s ease-in-out;
 }
-
+.navbar.nav-hidden {
+  transform: translateY(-100%);
+}
 .navbar nav a {
   margin-left: 28px;
   font-size: 0.85rem;
@@ -140,8 +143,8 @@ a {
 /* BUTTONS */
 .btn,
 form button {
-  background: var(--accent);
-  color: #000;
+  background: #000;
+  color: #ffffff;
   font-weight: 600;
   border-radius: 8px;
   padding: 12px 26px;
@@ -210,10 +213,123 @@ textarea {
   resize: none;
 }
 
+.swiper-slide img {
+  margin-top:20px;
+  width: 100%;
+  max-height: 420px;   /* decrease this value */
+  object-fit: contain;
+}
+
 /* FOOTER */
 footer {
   padding: 35px;
   text-align: center;
   font-size: 0.8rem;
   color: var(--text-muted);
+}
+/* ===== CORE CAPABILITIES SECTION ===== */
+
+.capabilities-section {
+  background: radial-gradient(
+    circle at top,
+    #0b0f1a,
+    #050608 70%
+  );
+  padding: 100px 20px;
+}
+
+.capabilities-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cap-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+  color:#ffffff;
+}
+
+.cap-subtitle {
+  font-family: 'Inter', sans-serif;
+  max-width: 720px;
+  margin: 0 auto 60px auto;
+  font-size: 1rem;
+  opacity: 0.85;
+  color:#ffffff;
+}
+
+/* GRID */
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+/* CARD */
+
+.capability-card {
+  position: relative;
+  padding: 36px;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.05),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  text-align: left;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  min-height: 260px;
+}
+
+/* Equal hover behavior */
+
+.capability-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.7);
+}
+
+/* INDEX */
+
+.cap-index {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  opacity: 0.7;
+  color:#ffffff;
+}
+
+/* TEXT */
+
+.capability-card h3 {
+  margin: 14px 0 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.15rem;
+  color:#ffffff;
+}
+
+.capability-card p {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  color:#ffffff;
+}
+
+/* ACCENT COLORS */
+
+.accent-cyan {
+  border-left: 4px solid #00e5ff;
+}
+
+.accent-violet {
+  border-left: 4px solid #9b7cff;
+}
+
+.accent-blue {
+  border-left: 4px solid #4da3ff;
 }
